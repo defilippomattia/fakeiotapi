@@ -1,0 +1,43 @@
+version: "3.8"
+
+services:
+  db-container:
+    container_name: db-container
+    image: postgres:15.3
+    restart: always
+    environment:
+      POSTGRES_USER: fakeiot
+      POSTGRES_PASSWORD: fakeiot
+      POSTGRES_DB: fakeiot
+    ports:
+      - 6432:5432
+    networks:
+      - fiot-network
+    volumes:
+      - ./scripts/init.sql:/docker-entrypoint-initdb.d/init.sql
+  backend-container:
+    container_name: backend-container
+    build: ./backend
+    restart: always
+    ports:
+      - 8080:8080
+    networks:
+      - fiot-network
+    depends_on:
+      - db-container
+
+  frontend-container:
+    container_name: frontend-container
+    build: ./frontend
+    restart: always
+    ports:
+      - 80:80
+      - 443:443
+    networks:
+      - fiot-network
+    depends_on:
+      - backend-container
+
+networks:
+  fiot-network:
+    driver: bridge
