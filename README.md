@@ -1,4 +1,41 @@
-# fakeiotapi
+# Introduction
+
+Pseudo-real IoT data provided by a free REST API.
+
+https://fakeiotapi.xyz
+
+This project was made mostly for me to learn deployment of a full stack application, so it can be that
+some things in backend and frontend code are not implemented in the best way possible.
+
+# Implemented endpoints
+
+```
+GET /api/v1/farms -> Get all farms
+GET /api/v1/farms/{farm-id} -> Get a single farm
+
+GET /api/v1/employees -> Get all employees
+GET /api/v1/employees/{employee-id} -> Get a single employee
+
+GET /api/v1/fields -> Get all fields
+GET /api/v1/fields/{field-id} -> Get a single field
+
+GET /api/v1/sensors -> Get all sensors
+GET /api/v1/sensors/{sensor-id} -> Get a single sensor
+
+GET /api/v1/farms/{farm-id}/employees -> Get all employees for a farm
+GET /api/v1/farms/{farm-id}/fields -> Get all fields for a farm
+GET /api/v1/farms/{farm-id}/sensors -> Get all sensors for a farm
+
+GET /api/v1/fields/{field-id}/sensors -> Get all sensors for a field
+
+GET /api/v1/sensors/{sensor-id}/temperature/current -> Get current temperature for a sensor
+GET /api/v1/sensors/{sensor-id}/humidity/current -> Get current humidity for a sensor
+GET /api/v1/sensors/{sensor-id}/pressure/current -> Get current pressure for a sensor
+
+GET /api/v1/sensors/{sensor-id}/temperature/history -> Get temperature history for a sensor
+GET /api/v1/sensors/{sensor-id}/humidity/history -> Get humidity history for a sensor
+GET /api/v1/sensors/{sensor-id}/pressure/history -> Get pressure history for a sensor
+```
 
 # Development environment
 
@@ -20,7 +57,7 @@ Docker Compose (v2.15.1)
 `cd backend`  
 `go run main.go`  
 `cd frontend`  
-`npm install`
+`npm install`  
 `in frontend/src/components/DocsPage/EndpointsTable.js set envDev to true -> NOT PRETTY`  
 `npm run start`  
 `http://localhost:3000`

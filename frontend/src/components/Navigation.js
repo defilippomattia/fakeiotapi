@@ -21,7 +21,7 @@ function Navigation() {
           </li>
           <li>
             <a
-              href="https://github.com/defilippomattia/iot-fake-rest-api/"
+              href="https://github.com/defilippomattia/fakeiotapi/"
               target="_blank"
               rel="noopener noreferrer"
             >
