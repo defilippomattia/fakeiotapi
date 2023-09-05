@@ -16,7 +16,7 @@ function HeroBanner() {
             <button className="button-primary">Show Examples</button>
           </a>
           <a
-            href="https://github.com/defilippomattia/iot-fake-rest-api/"
+            href="https://github.com/defilippomattia/fakeiotapi/"
             target="_blank"
             rel="noopener noreferrer"
           >
