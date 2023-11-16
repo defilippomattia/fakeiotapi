@@ -1,5 +1,7 @@
 # Introduction
 
+**Currently not deployed!**
+
 Pseudo-real IoT data provided by a free REST API.
 
 https://fakeiotapi.xyz
